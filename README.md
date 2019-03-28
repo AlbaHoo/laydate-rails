@@ -1,8 +1,12 @@
 # Laydate::Rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/laydate/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
+Another date time picker JS plugin, trust me, it's simple to to use and looks ready nice.
 
-TODO: Delete this and the text above, and describe your gem
+This is simply a wrapper on top of the awesome npm package [laydate](https://www.layui.com/laydate/) so it could be used easily in rails applications. 
+
+Laydate team did an awesome job so there is no dependency on either jQuery or bootstrap, all by itself.
+
+**Why this Gem**: My original plan was just to use npm/yarn to manage it in my rails application, but with one issue, the npm package loads css in the js by relative path, so you only need to include the js src in html, which is great in some cases. And this works great in my development env as well, but in rails production all are compiled into one simple js/css file, it breaks the relative path of css and fonts as well, anyway, the gem seems to work.
 
 ## Installation
 
@@ -22,17 +26,63 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add `#= require laydate` to your `app/assets/javascripts/application.js(.coffee)`, if you are using ActiveAdmin like me, just add it to `app/assets/javascripts/active_admin.js.coffee`;
 
-## Development
+Add `@import "laydate";` to your `app/assets/stylesheets/application.scss`, Note: `app/assets/stylesheets/active_admin.scss` for AA project;
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+If you don't have `application.scss`, try rename your `applications.css` file;
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+
+You are all set
+
+## Examples
+The full API documents link: https://www.layui.com/laydate/
+
+Basic: 
+
+html: 
+```
+<input type="text" id="test1">
+```
+
+js: 
+```
+laydate.render({
+  elem: '#test1', // element selector
+  lang: 'en' // default is Chinese version, use en for english
+});
+```
+
+Advanced: 
+
+html: 
+```
+<input type="text" id="test1">
+```
+
+js: 
+```
+laydate.render({
+  elem: '#test1',
+  lang: 'en', 
+  type: 'date' | 'time' | 'datetime',
+  range: true,
+  done: afterDone, // function
+  change: afterChange, // function 
+  theme: '#393D49', // change color if you want
+  showBottom: false, // if you want to show clear/Today/confirm buttons
+  value: '1989-10-14' // default value
+  min: '2016-10-14',
+  max: '2080-10-14'
+});
+```
+
+There are many other options too, reference to the official document for more infomations;
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/laydate-rails.
+Bug reports and pull requests are welcome on GitHub at https://github.com/AlbaHoo/laydate-rails.
 
 ## License
 
