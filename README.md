@@ -1,4 +1,8 @@
-# Laydate::Rails
+# Demo
+![demo](./demo-images/all.png?raw=true)
+
+
+# laydate-rails
 
 Another date time picker JS plugin, trust me, it's simple to to use and looks ready nice.
 
