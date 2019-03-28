@@ -1,0 +1,13 @@
+/** 图标字体 **/
+@font-face {
+  font-family: 'laydate-icon';
+  src: url(font_path('iconfont.eot'));
+  src: url(font_path('iconfont.eot#iefix')) format('embedded-opentype'),
+  url(font_path('iconfont.svg#iconfont')) format('svg'),
+  url(font_path('iconfont.woff')) format('woff'),
+  url(font_path('iconfont.ttf')) format('truetype');
+}
+
+// import vender/assets/stylesheets/laydate.css
+@import "laydate";
+

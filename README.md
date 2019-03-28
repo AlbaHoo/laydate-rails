@@ -2,7 +2,7 @@
 
 Another date time picker JS plugin, trust me, it's simple to to use and looks ready nice.
 
-This is simply a wrapper on top of the awesome npm package [laydate](https://www.layui.com/laydate/) so it could be used easily in rails applications. 
+This is simply a wrapper on top of the awesome npm package [laydate](https://www.layui.com/laydate/) so it could be used easily in rails applications.
 
 Laydate team did an awesome job so there is no dependency on either jQuery or bootstrap, all by itself.
 
@@ -28,7 +28,7 @@ Or install it yourself as:
 
 Add `#= require laydate` to your `app/assets/javascripts/application.js(.coffee)`, if you are using ActiveAdmin like me, just add it to `app/assets/javascripts/active_admin.js.coffee`;
 
-Add `@import "laydate";` to your `app/assets/stylesheets/application.scss`, Note: `app/assets/stylesheets/active_admin.scss` for AA project;
+Add `@import "laydate-rails";` to your `app/assets/stylesheets/application.scss`, Note: `app/assets/stylesheets/active_admin.scss` for AA project;
 
 If you don't have `application.scss`, try rename your `applications.css` file;
 
@@ -39,14 +39,14 @@ You are all set
 ## Examples
 The full API documents link: https://www.layui.com/laydate/
 
-Basic: 
+Basic:
 
-html: 
+html:
 ```
 <input type="text" id="test1">
 ```
 
-js: 
+js:
 ```
 laydate.render({
   elem: '#test1', // element selector
@@ -54,22 +54,22 @@ laydate.render({
 });
 ```
 
-Advanced: 
+Advanced:
 
-html: 
+html:
 ```
 <input type="text" id="test1">
 ```
 
-js: 
+js:
 ```
 laydate.render({
   elem: '#test1',
-  lang: 'en', 
+  lang: 'en',
   type: 'date' | 'time' | 'datetime',
   range: true,
   done: afterDone, // function
-  change: afterChange, // function 
+  change: afterChange, // function
   theme: '#393D49', // change color if you want
   showBottom: false, // if you want to show clear/Today/confirm buttons
   value: '1989-10-14' // default value

@@ -30,7 +30,7 @@ var task = {
 
   }
   ,other: function(){
-    gulp.src('./src/theme/default/font/*', { base: './src/theme/default/' }).pipe(rename({}))
+    gulp.src('./src/theme/default/font/*', { base: './src/theme/default/font' }).pipe(rename({}))
     .pipe(gulp.dest('./../vendor/assets/fonts/'));
   }
 };
